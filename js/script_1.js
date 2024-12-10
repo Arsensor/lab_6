@@ -10,7 +10,7 @@ function exercise_1() { //Объявление функции
         alert("Введите ещё раз корректные числа"); //Вывод о несоответствии ввода
         return;
     } else { //Если с первичной проверкой все хорошо, тогда
-        answer = get_middle_line_trap(number_a, number_b); //Формула нахождения средней линии
+        answer = get_middle_line_trap(number_a, number_b); //Функция нахождения средней линии
         if (answer > 0) {
             document.getElementById("output_exercise_1").innerHTML = "Средняя линия вашей трапеции: " + answer + "."; //Вывод
             return;
