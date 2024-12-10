@@ -39,12 +39,17 @@ function exercise_2() { //Объявление функции
             }
         }
     }
-    if ((isNaN(number_k) || (number_k == "")) || (isNaN(number_m) || (number_m == "")) || (isNaN(number_n) || (number_n == ""))) { //Объявление условия на проверку
+    if (((isNaN(number_k) || (number_k == "")) || (isNaN(number_m) || (number_m == ""))
+        || (isNaN(number_n) || (number_n == ""))) || (number_k < 0 || number_m < 0 || number_n < 0)) { //Объявление условия на проверку
         alert("Введите ещё раз корректные числа"); //Вывод о несоответствии ввода
-        return;
     } else {
-        matrix = get_matrix(number_m, number_n);
-        show_matrix("output_exercise_2_matrix", matrix);
-        document.getElementById("output_exercise_2_line").innerHTML = "Интересующая вас строчка матрицы: " + get_line_in_matrix(matrix, number_k) + "."; //Вывод
+        if (number_k <= number_m) {
+            matrix = get_matrix(number_m, number_n);
+            show_matrix("output_exercise_2_matrix", matrix);
+            document.getElementById("output_exercise_2_line").innerHTML = "Интересующая вас строчка матрицы: " + get_line_in_matrix(matrix, number_k) + "."; //Вывод
+        }
+        else {
+            alert("Такой строки не существует"); //Вывод о несоответствии ввода
+        }
     }
 }
